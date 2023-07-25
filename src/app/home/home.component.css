@@ -1,0 +1,70 @@
+.toolbar-item-spacer {
+  flex: 1 1 auto;
+}
+
+.app-container {
+  height: 88%;
+  margin: 0;
+  
+}  
+.app-sidenav {
+  width: fit-content;
+  
+}
+.app-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  
+  
+} 
+
+
+
+.marquee-container {
+  width: 100%; 
+  overflow: hidden; 
+  background-color: #004a89;
+  color: white;
+}
+
+.marquee {
+  display: inline-block; 
+  
+  white-space: nowrap; 
+  animation: marquee 35s linear infinite; 
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%); 
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.notification-box {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+}
+
+.notification-content {
+  flex-grow: 1;
+}
+
+span.badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 4px;
+  font-size: 12px;
+}

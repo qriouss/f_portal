@@ -1,0 +1,33 @@
+<div class="row grid-container">
+    <div style="display: flex; align-items: center; ">
+        <mat-icon class="title">manage_accounts</mat-icon>
+        <span style="font-size: 20px;padding-left:7px; ">Welcome User!</span>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 " >
+            <p>A text file (sometimes spelled textfile; an old alternative name is flatfile) is a kind of computer file that is structured as a sequence of lines of electronic text. A text file exists stored as data within a computer file system. In operating systems such as CP/M and MS-DOS, where the operating system does not keep track of the file size in bytes, the end of a text file is denoted by placing one or more special characters, known as an end-of-file (EOF) marker, as padding after the last line in a text file. On modern operating systems such as Microsoft Windows and Unix-like systems, text files do not contain any special EOF character, because file systems on those operating systems keep track of the file size in bytes. Most text files need to have end-of-line delimiters, 
+                which are done in a few different ways depending on operating system. Some operating systems with record-orientated file systems may not use new line delimiters and will primarily store text files with lines separated as fixed or variable length records.
+                "Text file" refers to a type of container, while plain text refers to a type of content.</p>
+        </div>
+    </div>
+        <div  fxLayout="row" fxLayoutGap="75px">
+        <div class="col-md-1" *ngFor="let i of card_content">
+          <mat-card [style.background-color]="i.title ==='GL' ? ' #025eaa ' : '#a6a6a6'">
+          
+          <mat-card-header style="display:flex;justify-content: center;">
+            <mat-card-title >{{i.title}}
+              
+            </mat-card-title>
+            
+          </mat-card-header>
+            <mat-card-content>
+              <p>{{i.description}}</p>
+            </mat-card-content>
+            <mat-card-actions  >
+              <button mat-button [routerLink]="['/home/ViewMore']" [routerLinkActive]="['is-active']" color="white">View More</button>
+             
+            </mat-card-actions>
+          </mat-card>
+          </div>
+    </div>
+</div>

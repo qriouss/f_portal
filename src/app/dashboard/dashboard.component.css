@@ -1,0 +1,37 @@
+.grid-container {
+    /* margin: 15px; */
+    margin: 15px 0 0 15px;
+}
+
+.title {
+    width: 30px;
+    height: 30px;
+    background-color: #005994;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    font-size: 19px;
+    margin-bottom: 4px;
+}
+
+
+  
+mat-card {
+    flex: 0 0 calc(14.28% - 16px);
+    width: 150%;
+    margin: 15px;
+    color: white;
+  }
+  
+  /* Media query for smaller screens */
+  @media screen and (max-width: 768px) {
+    [fxLayout] {
+      flex-wrap: wrap;
+    }
+  
+    mat-card {
+      flex: 0 0 calc(33.33% - 16px);
+    }
+  }
+
+  

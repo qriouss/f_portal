@@ -6,10 +6,10 @@
 .title {
     width: 30px;
     height: 30px;
-    background-color: #005994;
+    background-color: white;
     padding: 5px;
     border-radius: 5px;
-    color: white;
+    color: #005994;
     font-size: 19px;
     margin-bottom: 4px;
 }
@@ -19,12 +19,13 @@
 mat-card {
     flex: 0 0 calc(14.28% - 16px);
     width: 150%;
-    margin: 15px;
+    margin-bottom:15px ;
     color: white;
+    border-radius: 10px;
   }
   
   /* Media query for smaller screens */
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 600px) {
     [fxLayout] {
       flex-wrap: wrap;
     }
@@ -34,4 +35,8 @@ mat-card {
     }
   }
 
-  
+.zoom:hover{
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+

@@ -20,9 +20,15 @@
               </a> -->
   
             </div>
-            <div class="form-group pb-2 ">
+            <div class="form-group pb-2 " >
               <h3 style="color:#005994  ;">Environment</h3>
-              <input type="text"  ngModel class="form-control" name="text" required>
+              <!-- <input type="text"  ngModel class="form-control" name="text" required> -->
+              <mat-select type="text"  ngModel class="form-control" name="text" required>
+                <mat-option value="volvo">Dev1</mat-option>
+                <mat-option value="saab">Dev2</mat-option>
+                <mat-option value="mercedes">Dev3</mat-option>
+                <mat-option value="audi">Dev4</mat-option>
+              </mat-select>
             </div>
             <div class="d-flex align-items-center justify-content-between">
   

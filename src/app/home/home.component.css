@@ -3,8 +3,9 @@
 }
 
 .app-container {
-  height: 88%;
+  height: 90%;
   margin: 0;
+  background-color: #0F1632;
   
 }  
 .app-sidenav {
@@ -67,4 +68,12 @@ span.badge {
   border-radius: 50%;
   padding: 4px;
   font-size: 12px;
+}
+
+
+
+
+
+.mat-expansion-indicator::after {
+  color: green;
 }

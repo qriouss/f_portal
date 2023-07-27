@@ -1,0 +1,41 @@
+.app-container {
+    height: 100%;
+    margin: 0;
+    background-color: #0F1632;
+    
+  }  
+  .app-sidenav {
+    width:17% ;
+    
+    
+  }
+  .app-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    
+    
+  } 
+
+  .grid-container {
+    /* margin: 15px; */
+    margin: 15px 0 0 15px;
+    color:white;
+    
+    
+    
+    
+}
+
+.title {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    color: #005994;
+    font-size: 19px;
+    margin-bottom: 4px;
+}
+

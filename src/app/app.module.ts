@@ -26,6 +26,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PopupMoreComponent } from './popup-more/popup-more.component';
 import { AuthGuard } from './auth.guard';
+import {MatSelectModule} from '@angular/material/select';
+
 
 
 @NgModule({
@@ -54,7 +56,9 @@ import { AuthGuard } from './auth.guard';
     MatExpansionModule,
     MatListModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatSelectModule
+    
     
 
 

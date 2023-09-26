@@ -1,65 +1,112 @@
-.cssload-container {
-    position: fixed;
-    width: 100%;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.7);
-    z-index: 9999;
+/* Base styles for the Gantt chart */
+/* .container {
+  max-width: 1200px;
+  min-width: 650px;
+  margin: 0 auto;
+  padding: 20px; 
+} */
+
+.chart {
+  display: grid;
+  border: 2px solid #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-row {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  background-color: #DCDCDC;
+}
+
+.chart-row:nth-child(odd) {
+  background-color: #C0C0C0;
+}
+
+.chart-period {
+  color: #fff;
+  background-color: #708090 !important;
+  border-bottom: 2px solid #000;
+  grid-template-columns: 50px repeat(12, 1fr);
+}
+
+.chart-lines {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  grid-template-columns: 50px repeat(12, 1fr);
+}
+
+.chart-period > span {
+  text-align: center;
+  font-size: 13px;
+  align-self: center;
+  font-weight: bold;
+  padding: 10px 0; /* Reduced padding for responsiveness */
+}
+
+.chart-lines > span {
+  display: block;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.chart-row-item {
+  background-color: #808080;
+  border: 1px solid #000;
+  border-top: 0;
+  border-left: 0;
+  padding: 15px 0; /* Reduced padding for responsiveness */
+  font-size: 14px; /* Adjust font size for responsiveness */
+  font-weight: bold;
+  text-align: center;
+}
+
+.chart-row-bars {
+  list-style: none;
+  display: grid;
+  padding: 10px 0; /* Reduced padding for responsiveness */
+  margin: 0;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 5px 0; /* Reduced gap for responsiveness */
+  border-bottom: 1px solid #000;
+}
+
+li {
+  font-weight: 450;
+  text-align: left;
+  font-size: 14px; /* Adjust font size for responsiveness */
+  min-height: 10px; /* Adjust min-height for responsiveness */
+  background-color: darkblue;
+  padding: 5px 10px; /* Reduced padding for responsiveness */
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+  display:flex ;
+  justify-content: center;
+  /* cursor: pointer; */
+  border-radius: 15px;
+}
+
+/* Responsive CSS */
+@media screen and (max-width: 768px) {
+  /* Adjustments for screens smaller than 768px */
+  .container {
+    padding: 10px;
   }
-  
-  .cssload-speeding-wheel {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 48%;
-    top: 40%;
-    width: 63px;
-    height: 63px;
-    margin: 0 auto;
-    border: 4px solid rgb(0, 0, 0);
-    border-radius: 50%;
-    border-left-color: transparent;
-    border-right-color: transparent;
-    animation: cssload-spin 500ms infinite linear;
-    -o-animation: cssload-spin 500ms infinite linear;
-    -ms-animation: cssload-spin 500ms infinite linear;
-    -webkit-animation: cssload-spin 500ms infinite linear;
-    -moz-animation: cssload-spin 500ms infinite linear;
+
+  .chart-row-item {
+    font-size: 12px;
+    padding: 10px 0;
   }
-  
-  @keyframes cssload-spin {
-    100% {
-      transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
+
+  .chart-period > span {
+    padding: 8px 0;
+    font-size: 12px;
   }
-  
-  @-o-keyframes cssload-spin {
-    100% {
-      -o-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
+
+  li {
+    font-size: 12px;
+    padding: 4px 8px;
   }
-  
-  @-ms-keyframes cssload-spin {
-    100% {
-      -ms-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
-  
-  @-webkit-keyframes cssload-spin {
-    100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
-  
-  @-moz-keyframes cssload-spin {
-    100% {
-      -moz-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
+}

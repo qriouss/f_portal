@@ -6,37 +6,66 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./user-guide.component.css']
 })
 
-export class UserGuideComponent {
+export class UserGuideComponent implements OnInit{
 
-  ganttData = [
-    { task: 'Task 1', start: new Date(2023, 1, 1), end: new Date(2023, 5, 15), color: 'green' },
-    { task: 'Task 2', start: new Date(2023, 6, 1), end: new Date(2023, 7, 20), color: 'red' },
-    { task: 'Task 3', start: new Date(2023, 6, 1), end: new Date(2023, 10, 20), color: 'grey' },
-    { task: 'Task 4', start: new Date(2023, 4, 1), end: new Date(2023, 7, 20), color: 'purple' },
-    // Add more tasks with their start and end dates
-  ];
+  
+
+  ganttData: any[]= []
+
+
+  selectedEnvironment: string ='1'; // Variable to store the selected environment
+  showData: boolean = false; // Variable to control chart visibility
+
+  
+  ngOnInit() { 
+    this.updateChart();
+  }
+
+  // Method to update chart data based on the selected environment
+  updateChart() {
+    
+    if (this.selectedEnvironment === '1') {
+      this.ganttData = [
+        { task: 'Cloning', start: new Date(2023, 0, 1), end: new Date(2023, 6, 10), color: 'green' },
+        { task: 'Patching', start: new Date(2023, 2, 1), end: new Date(2023, 7, 20), color: 'red' },
+        { task: 'Task 3', start: new Date(2023, 2, 1), end: new Date(2023, 3, 20), color: 'grey' },
+        { task: 'Task 4', start: new Date(2023, 5, 1), end: new Date(2023, 7, 31), color: 'purple' },
+        // Add more tasks with their start and end dates
+      ];
+    } else if (this.selectedEnvironment === '2') {
+      this.ganttData =[
+        { task: 'Cloning', start: new Date(2023, 0, 1), end: new Date(2023, 4, 10), color: 'green' },
+        { task: 'Patching', start: new Date(2023, 6, 1), end: new Date(2023, 7, 20), color: 'red' },
+        { task: 'Task 3', start: new Date(2023, 6, 1), end: new Date(2023, 10, 20), color: 'grey' },
+        { task: 'Task 4', start: new Date(2023, 0, 1), end: new Date(2023, 11, 31), color: 'purple' },
+        // Add more tasks with their start and end dates
+      ];
+    }
+
+    // Set showData to true to display the chart
+    this.showData = true;
+  }
+
+  
 
   calculateGanttStyle(task: any) {
     
     // console.log(startDate,"------",endDate)
-
-    const startMonth = task.start.getMonth() ;
-  const endMonth = task.end.getMonth() ;
+    const myDate=new Date(2023,0,1);
+    const startMonth = task.start.getMonth()+1 ;
+  const endMonth = task.end.getMonth()+1 ;
   const gridColumnStart = startMonth;
-  const gridColumnEnd = endMonth + 1;
-
-    // Calculate the percentage of completion based on the current date
-   
-      
-    // Ensure progress is between 0 and 1
-    // const clampedProgress = Math.max(0, Math.min(1, progress));
-    
-    // Calculate the width of the task bar based on progress
-    // const width = progress * 100;
-    // console.log(progress)
+  const gridColumnEnd = endMonth+1 ;
+  const startDate = ((task.start.getTime()-myDate.getTime())/86400000)+1;
+  const endDate = ((task.end.getTime()-myDate.getTime())/86400000)+1;
+  const daysDifference = Math.ceil((endDate - startDate));
+  // const  actualdiff= (daysDifference/366)*100;
+    console.log(startDate)
+  
     return {
       'grid-column-start': gridColumnStart ,
-      'grid-column-end': gridColumnEnd,
+      'grid-column-end': gridColumnEnd ,
+      // 'width': `${daysDifference}`,
       'background-color': task.color
     };
   }
